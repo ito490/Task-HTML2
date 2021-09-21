@@ -135,7 +135,75 @@
             <p class="copyright">Copyright(C) 2020 東京フリーランス ALL Rights Reserved.</p>
         </div>
     </footer>
+    
 
+       <script>
+        // toogle ドロワーメニュー
+        $(function () {
+            $('.header-nav-ber-item').hide();
+            $('.header-nav-item-course').click(function () {
+                $('.header-nav-ber-item').slideToggle();
+            });
+        });
+
+        // トップスクロール
+        $(function () {
+            // 変数宣言と代入
+            let pageTop = $('#page-top');
+            // ボタン非表示
+            pageTop.hide();
+            // 80pxスクロールしたらボタン表示
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 80) {
+                    // 0.3秒でフェードイン
+                    pageTop.fadeIn(300);
+                } else {
+                    // 0.3秒でフェードアウト
+                    pageTop.fadeOut(300);
+                }
+            });
+            // 0.5秒でページトップへ戻る
+            pageTop.click(function () {
+                $('body, html').animate({ scrollTop: 0 }, 500);
+                return false;
+            })
+        })
+
+        // モーダル
+        $(function () {
+            $('.js-modal-open-1').on('click', function () {
+                $('.js-modal-1').fadeIn();
+                return false;
+            });
+            $('.js-modal-close').on('click', function () {
+                $('.js-modal-1').fadeOut();
+                return false;
+            });
+        });
+        // <!--modal 初級-->
+        $(function () {
+            $('.js-modal-open-2').on('click', function () {
+                $('.js-modal-2').fadeIn();
+                return false;
+            });
+            $('.js-modal-close').on('click', function () {
+                $('.js-modal-2').fadeOut();
+                return false;
+            });
+        });
+        // <!--modal 中級-->
+        $(function () {
+            $('.js-modal-open-3').on('click', function () {
+                $('.js-modal-3').fadeIn();
+                return false;
+            });
+            $('.js-modal-close').on('click', function () {
+                $('.js-modal-3').fadeOut();
+                return false;
+            });
+        });
+        // <!--modal 上級-->
+    </script>
 
  
 </body>
